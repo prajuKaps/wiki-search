@@ -21,7 +21,7 @@ function App() {
 
   const searchWikipedia = async () => {
     const response = await axios.get(
-      `wikiApi?action=query&format=json&list=search&srsearch=${search}&sroffset=${currentPage * MAX_RESULTS_PER_PAGE}`)
+      `https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&list=search&srsearch=${search}&sroffset=${currentPage * MAX_RESULTS_PER_PAGE}`)
   
       setResults(response.data.query.search);
       setSearchInfo(response.data.query.searchinfo);
